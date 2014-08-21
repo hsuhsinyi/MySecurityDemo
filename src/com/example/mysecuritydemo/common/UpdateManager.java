@@ -23,9 +23,11 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
@@ -57,6 +59,7 @@ public class UpdateManager {
 	//private String savePath;
 	private String tmpFileSize;
 	private String apkFileSize;
+	private String saveFile;
 	private boolean downloadFlag = false;
 	private int progress;
 	private ProgressDialog loadDialog = null;
@@ -115,7 +118,6 @@ public class UpdateManager {
 	public void checkUpdate() {
 		getCurrentAppInfo();
 		getUpdateInfo();
-
 	}
 
 	private Dialog UpdateDialog() {
@@ -190,7 +192,7 @@ public class UpdateManager {
 	};
 
 	/**
-	 * 通过config.xml文件的服务器地址得到updateAppinfo实例
+	 * 通过config.xml文件的服务器地址得到updateAppinfo实例。注意不能运行在主线程中，android更高版本的限制
 	 * 
 	 * @return UpdateAppInfo
 	 * @throws IOException
@@ -229,7 +231,7 @@ public class UpdateManager {
 			if(!file.exists()){
 				file.mkdirs();
 			}
-			String saveFile = savePath + File.separator + versionName + "." + "apk";
+			saveFile = savePath + File.separator + versionName + "." + "apk";
 			File apkFile = new File(saveFile);
 			if(apkFile.exists()){
 				apkFile.delete();
@@ -275,8 +277,11 @@ public class UpdateManager {
 	};
 
 	public void installApk() {
-
+		Intent intent = new Intent();
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		intent.setAction(android.content.Intent.ACTION_VIEW);
+		intent.setDataAndType(Uri.fromFile(new File(saveFile)),"application/vnd.android.package-archive");
+		context.startActivity(intent);
 	}
-	
 
 }
