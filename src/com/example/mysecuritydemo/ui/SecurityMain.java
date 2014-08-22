@@ -15,6 +15,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -65,6 +67,15 @@ public class SecurityMain extends Activity {
 				R.layout.gridview_allcontent, new String[] { "image", "title" }, 
 				new int[] { R.id.image_content,R.id.text_content});
 		mainGridView.setAdapter(mainAdapter);
+		mainGridView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 	}
 
 	private void checkUpdateApp() {
@@ -73,9 +84,7 @@ public class SecurityMain extends Activity {
         if(networkInfo == null || !networkInfo.isAvailable())  
         {  
             Toast.makeText(this, "网络连接不可用, 请检查网络连接",Toast.LENGTH_LONG).show();
-        }  
-        else   
-        {  System.out.println("i am here");
+        }else{ 
             UpdateManager updateManager = new UpdateManager(this);
             updateManager.checkUpdate();
         }  
