@@ -32,6 +32,7 @@ import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
@@ -45,9 +46,8 @@ import com.example.mysecuritydemo.service.DownAppService;
 /**
  * 应用程序更新检测部分
  * 
- * @author hhy CLASSNAME UpdateManager
+ * @author hhy 
  * @Version V1.0
- * @ModifyBy hhy
  * @ModifyTime 2014-8-21 14:15:09
  */
 public class UpdateManager {
@@ -105,10 +105,11 @@ public class UpdateManager {
 		NotificationCompat.Builder ncb = new NotificationCompat.Builder(context);
 		ncb.setTicker("亲，有新的更新可用哟~");
 		ncb.setAutoCancel(true);
-		ncb.setDefaults(Notification.DEFAULT_ALL);
+		ncb.setDefaults(Notification.DEFAULT_SOUND);
 		ncb.setContentTitle(versionName + "." + "apk");
 		ncb.setContentText("点击进行更新");
-		ncb.setSmallIcon(R.drawable.icon_download);
+		ncb.setSmallIcon(R.drawable.icon_download_small);
+		ncb.setLargeIcon(BitmapFactory.decodeResource(context.getResources(),R.drawable.icon_download));
 		Intent intent = new Intent(context, DownAppService.class);
 		intent.putExtra("urlPath", urlPath);
 		intent.putExtra("saveFile", saveFile);

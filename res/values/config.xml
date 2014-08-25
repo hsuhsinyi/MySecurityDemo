@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-    <string name="serverUrl">http://192.168.1.106:8080/updateApp/update.xml</string>
+    <string name="serverUrl">http://192.168.199.178:8080/myApk/update.xml</string>
 
     
 </resources>

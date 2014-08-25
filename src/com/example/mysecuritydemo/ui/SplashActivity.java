@@ -1,5 +1,6 @@
-package com.example.mysecuritydemo;
+package com.example.mysecuritydemo.ui;
 
+import com.example.mysecuritydemo.R;
 import com.example.mysecuritydemo.ui.SecurityMain;
 
 import android.app.Activity;
@@ -22,9 +23,8 @@ import android.os.Build;
 /**
  * 应用欢迎动画界面，跳转到主界面
  * 
- * @author hhy CLASSNAME SplashActivity
+ * @author hhy 
  * @Version V1.0
- * @ModifyBy hhy
  * @ModifyTime 2014-8-21 12:14:51
  */
 public class SplashActivity extends Activity {

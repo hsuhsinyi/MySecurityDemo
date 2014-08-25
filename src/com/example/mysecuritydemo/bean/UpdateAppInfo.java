@@ -10,9 +10,8 @@ import android.util.Xml;
 /**
  * 应用程序更新实体类
  * 
- * @author hhy CLASSNAME UpdateAppInfo
+ * @author hhy 
  * @Version V1.0
- * @ModifyBy hhy
  * @ModifyTime 2014-8-21 14:15:09
  */
 public class UpdateAppInfo {

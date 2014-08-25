@@ -15,6 +15,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
@@ -25,9 +26,8 @@ import android.support.v4.app.NotificationCompat;
 /**
  * 更新APP下载实现，服务开始创建线程下载文件，同步更新notification
  * 
- * @author hhy CLASSNAME DownAppService
+ * @author hhy 
  * @Version V1.0
- * @ModifyBy hhy
  * @ModifyTime 2014-8-22 14:45:42
  */
 public class DownAppService extends Service {
@@ -65,7 +65,8 @@ public class DownAppService extends Service {
 		ncb.setTicker("正在进行下载");
 		ncb.setContentTitle(apkFile.getName());
 		ncb.setContentText("正在下载");
-		ncb.setSmallIcon(R.drawable.icon_download);
+		ncb.setSmallIcon(R.drawable.icon_download_small);
+		ncb.setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.icon_download));
 		Intent nullIntent = new Intent();
 		PendingIntent pendingIntent = PendingIntent.getActivity(
 				getApplicationContext(), 0, nullIntent, 0);
@@ -167,8 +168,10 @@ public class DownAppService extends Service {
 		ncb = new NotificationCompat.Builder(getApplication());
 		ncb.setContentTitle(apkFile.getName());
 		ncb.setTicker("下载完成，点击进行安装");
+		ncb.setDefaults(Notification.DEFAULT_SOUND);
 		ncb.setContentText("下载完成，点击进行安装");
-		ncb.setSmallIcon(R.drawable.icon_download);
+		ncb.setSmallIcon(R.drawable.icon_download_small);
+		ncb.setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.icon_download));
 		Intent installIntent = new Intent(Intent.ACTION_VIEW);
 		installIntent.setDataAndType(Uri.fromFile(new File(saveFilePath)),
 				"application/vnd.android.package-archive");

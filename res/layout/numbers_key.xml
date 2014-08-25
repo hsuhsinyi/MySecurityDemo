@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical"
+    android:padding="5dip" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/num_installed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <Button
+            android:id="@+id/btn_uninstall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="卸载"
+            android:textColor="#ffffff" />
+
+    </RelativeLayout>
+    
+    
+    <TableLayout
+        android:id="@+id/numbers_pane"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/result_query"
+        android:stretchColumns="1" >
+
+        <TableRow>
+        </TableRow>
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:textSize="42sp" >
+
+                <Button
+                    android:id="@+id/num7"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialpad_key_1_default"
+                    android:textSize="42sp" />
+
+                <Button
+                    android:id="@+id/num8"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialpad_key_2_default"
+                    android:textSize="42sp" />
+
+                <Button
+                    android:id="@+id/num9"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialpad_key_03_default"
+                    android:textSize="42sp" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:textSize="42sp" >
+
+                <Button
+                    android:id="@+id/num4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialpad_key_4_default"
+                    android:textSize="42sp" />
+
+                <Button
+                    android:id="@+id/num5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialpad_key_5_default"
+                    android:textSize="42sp" />
+
+                <Button
+                    android:id="@+id/num6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialpad_key_6_default"
+                    android:textSize="42sp" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:textSize="42sp" >
+
+                <Button
+                    android:id="@+id/num1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialpad_key_7_default"
+                    android:textSize="42sp" />
+
+                <Button
+                    android:id="@+id/num2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialpad_key_08_default"
+                    android:textSize="42sp" />
+
+                <Button
+                    android:id="@+id/num3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialpad_key_9_default"
+                    android:textSize="42sp" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:textSize="42sp" >
+
+                <Button
+                    android:id="@+id/num0"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialpad_key_0_default"
+                    android:textSize="42sp" />
+                
+                                <Button
+                    android:id="@+id/numnull"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialpad_key_0_default"
+                    android:textSize="42sp" />
+
+                <Button
+                    android:id="@+id/add"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/dialpad_btn_del_default"
+                    android:textSize="42sp" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+        </TableRow>
+    </TableLayout>
+
+    <ListView
+        android:id="@+id/listview_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>
