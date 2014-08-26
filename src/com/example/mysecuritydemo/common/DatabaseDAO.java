@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.example.mysecuritydemo.R;
-import com.example.mysecuritydemo.ui.QueryAttribution;
+import com.example.mysecuritydemo.ui.Attribution;
 
 import android.R.integer;
 import android.app.Activity;

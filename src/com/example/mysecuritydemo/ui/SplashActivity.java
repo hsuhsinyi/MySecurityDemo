@@ -1,7 +1,7 @@
 package com.example.mysecuritydemo.ui;
 
 import com.example.mysecuritydemo.R;
-import com.example.mysecuritydemo.ui.SecurityMain;
+import com.example.mysecuritydemo.ui.Main;
 
 import android.app.Activity;
 import android.app.ActionBar;
@@ -60,7 +60,7 @@ public class SplashActivity extends Activity {
 	}
 
 	public void startActivityTo() {
-		Intent intent = new Intent(this, SecurityMain.class);
+		Intent intent = new Intent(this, Main.class);
 		startActivity(intent);
 		finish();
 	}

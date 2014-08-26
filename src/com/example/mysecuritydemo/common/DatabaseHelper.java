@@ -3,7 +3,7 @@ package com.example.mysecuritydemo.common;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.mysecuritydemo.ui.QueryAttribution;
+import com.example.mysecuritydemo.ui.Attribution;
 
 import android.content.Context;
 import android.database.Cursor;

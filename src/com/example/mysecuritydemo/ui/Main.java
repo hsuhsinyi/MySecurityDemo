@@ -17,12 +17,13 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.Toast;
 
-public class SecurityMain extends Activity {
+public class Main extends Activity {
 	
 	private MainUiAdapter mainAdapter;
 	private GridView mainGridView;
@@ -31,6 +32,7 @@ public class SecurityMain extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main_ui);
 		
 		checkUpdateApp();
@@ -60,12 +62,12 @@ public class SecurityMain extends Activity {
 			switch (position) {
 			case 0:
 				Intent intentQuery = new Intent();
-				intentQuery.setClass(SecurityMain.this, QueryAttribution.class);
+				intentQuery.setClass(Main.this, Attribution.class);
 				startActivity(intentQuery);
 				break;
 			case 1:
 				Intent intentApp = new Intent();
-				intentApp.setClass(SecurityMain.this, InstalledApp.class);
+				intentApp.setClass(Main.this, InstalledApp.class);
 				startActivity(intentApp);
 				break;
 			case 2:

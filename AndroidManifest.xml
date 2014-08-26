@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -30,12 +30,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.mysecuritydemo.ui.SecurityMain"
+            android:name="com.example.mysecuritydemo.ui.Main"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.mysecuritydemo.ui.QueryAttribution"
+            android:name="com.example.mysecuritydemo.ui.Attribution"
             android:label="查询归属地"
             android:screenOrientation="portrait" >
         </activity>

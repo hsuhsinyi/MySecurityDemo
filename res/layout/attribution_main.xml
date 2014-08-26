@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <fragment
+        android:id="@+id/fragement_search"
+        android:name="com.example.mysecuritydemo.ui.FragmentQueryAttribution"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="10" />
+
+    <fragment
+        android:id="@+id/fragement_common"
+        android:name="com.example.mysecuritydemo.ui.FragmentCommon"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="10" />
+
+    <!-- 底部菜单页面 -->
+
+    <RadioGroup
+        android:id="@+id/main_radio"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_gravity="bottom"
+        android:background="@drawable/widget_bar_bg_n"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/query_radiobtn"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:button="@null"
+            android:drawableTop="@drawable/serach_query"
+            android:gravity="center_horizontal"
+            android:paddingBottom="1.0dip"
+            android:paddingTop="1.0dip" />
+
+        <RadioButton
+            android:id="@+id/common_radiobtn"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:button="@null"
+            android:drawableTop="@drawable/common_query"
+            android:gravity="center_horizontal"
+            android:paddingBottom="1.0dip"
+            android:paddingTop="1.0dip" />
+    </RadioGroup>
+
+</LinearLayout>

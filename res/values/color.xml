@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<resources>  
+  
+    <color name="software_textColor_selected">#444444</color>  
+    <color name="software_textColor_unselected">#2BB958</color>  
+      
+</resources>  

@@ -36,10 +36,5 @@
         android:textColor="#3B3B3B"
         android:textSize="20dip" />
 
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        layout="@layout/queryattrubution_footer" />
 
 </RelativeLayout>
