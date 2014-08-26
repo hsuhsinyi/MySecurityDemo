@@ -25,7 +25,7 @@
         android:layout_width="fill_parent"
         android:layout_height="50dip"
         android:layout_gravity="bottom"
-        android:background="@drawable/widget_bar_bg_n"
+        android:background="#ffffff"
         android:gravity="center_vertical"
         android:orientation="horizontal" >
 
