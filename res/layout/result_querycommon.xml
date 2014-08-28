@@ -5,13 +5,10 @@
     android:background="#E4E4E4"
     android:orientation="horizontal" >
 
-
     <ListView
-        android:id="@+id/listview_commonplate"
+        android:id="@+id/listview_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
     </ListView>
-
-
 
 </RelativeLayout>

@@ -40,6 +40,10 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name="com.example.mysecuritydemo.ui.ResultCommonQuery"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name="com.example.mysecuritydemo.ui.InstalledApp"
             android:label="已安装应用"
             android:screenOrientation="portrait" >

@@ -144,7 +144,7 @@ public class FragmentCommon extends Fragment {
 		screenW = getScreenWidth();
 		int eachWith = (int) (screenW / 3.0);
 		ivBottomLine
-				.setLayoutParams(new LinearLayout.LayoutParams(eachWith, 5));
+				.setLayoutParams(new LinearLayout.LayoutParams(eachWith, 2));
 		// offset = (int) (screenW /10.0) - (int) (bottomLineWidth/2);
 		// ivBottomLine.setX((float)offset);
 		offset = (int) ((screenW / 3.0) / 2);
