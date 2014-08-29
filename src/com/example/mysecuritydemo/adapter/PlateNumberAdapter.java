@@ -25,7 +25,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class CommonNumbersAdapter extends SimpleAdapter {
+public class PlateNumberAdapter extends SimpleAdapter {
 	List<Map<String, Object>> mlist = null;
 	HashMap<String, Object> map;
 	LayoutInflater mInflater;
@@ -35,7 +35,7 @@ public class CommonNumbersAdapter extends SimpleAdapter {
 	public final int SHOW_GRID = 2;
 	public int show_type = SHOW_GRID;
 
-	public CommonNumbersAdapter(Context context,
+	public PlateNumberAdapter(Context context,
 			List<Map<String, Object>> data, int resource, String[] from,
 			int[] to) {
 		super(context, data, resource, from, to);
@@ -67,6 +67,7 @@ public class CommonNumbersAdapter extends SimpleAdapter {
 
 	public final class ViewHolder {
 		private TextView districtName;
+		private TextView plateNumber;
 	}
 
 	@Override
@@ -74,16 +75,18 @@ public class CommonNumbersAdapter extends SimpleAdapter {
 		// TODO Auto-generated method stub
 		ViewHolder holder = null;
 		if (convertView == null) {
-			convertView = mLayoutInflater.inflate(R.layout.listview_commonplate,
+			convertView = mLayoutInflater.inflate(R.layout.listview_platenumber,
 					null);
 			holder = new ViewHolder();
 			holder.districtName = (TextView) convertView
 					.findViewById(R.id.district_name);
+			holder.plateNumber = (TextView) convertView.findViewById(R.id.plate_number);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
 		convertView.setTag(holder);
 		holder.districtName.setText(mlist.get(position).get("name").toString());
+		holder.plateNumber.setText(mlist.get(position).get("plate").toString());
 		return convertView;
 	}
 

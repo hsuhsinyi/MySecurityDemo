@@ -5,7 +5,7 @@ import java.util.Map;
 
 import com.example.mysecuritydemo.R;
 import com.example.mysecuritydemo.adapter.AppManagerAdapter;
-import com.example.mysecuritydemo.adapter.PlateNumbersAdapter;
+import com.example.mysecuritydemo.adapter.PlateProvinceAdapter;
 import com.example.mysecuritydemo.common.DatabaseDAO;
 
 import android.content.Intent;
@@ -20,7 +20,7 @@ import android.widget.ListView;
 
 public class FragmentCommonPlate extends Fragment{
 	
-	private PlateNumbersAdapter numbersAdapter;
+	private PlateProvinceAdapter numbersAdapter;
 	private List<Map<String, Object>> mList = null;
 	private ListView listViewCommon;
 	
@@ -38,22 +38,22 @@ public class FragmentCommonPlate extends Fragment{
 		DatabaseDAO dao = new DatabaseDAO(getActivity());
 		mList = dao.queryPlateProvince();
 		listViewCommon = (ListView) getActivity().findViewById(R.id.listview_commonplate);
-		numbersAdapter = new PlateNumbersAdapter(getActivity(), mList, R.id.listview_commonplate, new String[]{"name", "short"}, new int[]{R.id.district_name, R.id.short_name});
+		numbersAdapter = new PlateProvinceAdapter(getActivity(), mList, R.id.listview_commonplate, new String[]{"name", "short"}, new int[]{R.id.district_name, R.id.short_name});
 		listViewCommon.setAdapter(numbersAdapter);
-//		listViewCommon.setOnItemClickListener(new OnItemClickListener() {
-//
-//			@Override
-//			public void onItemClick(AdapterView<?> parent, View view,
-//					int position, long id) {
-//				// TODO Auto-generated method stub
-//				Intent intent = new Intent();
-//				intent.setClass(getActivity(), ResultCommonQuery.class);   
-//				Bundle bundle = new Bundle();       
-//				bundle.putString("type", "post");  
-//				bundle.putLong("id", id);
-//				intent.putExtras(bundle); 
-//				startActivity(intent); 
-//			}
-//		});
+		listViewCommon.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent();
+				intent.setClass(getActivity(), ResultCommonQuery.class);   
+				Bundle bundle = new Bundle();       
+				bundle.putString("type", "plate");  
+				bundle.putLong("id", id);
+				intent.putExtras(bundle); 
+				startActivity(intent); 
+			}
+		});
 	}
 }

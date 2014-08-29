@@ -5,8 +5,8 @@ import java.util.Map;
 
 import com.example.mysecuritydemo.R;
 import com.example.mysecuritydemo.adapter.AppManagerAdapter;
-import com.example.mysecuritydemo.adapter.CommonNumbersAdapter;
-import com.example.mysecuritydemo.adapter.PlateNumbersAdapter;
+import com.example.mysecuritydemo.adapter.postProvinceAdapter;
+import com.example.mysecuritydemo.adapter.PlateProvinceAdapter;
 import com.example.mysecuritydemo.adapter.PostNumbersAdapter;
 import com.example.mysecuritydemo.common.DatabaseDAO;
 
@@ -22,7 +22,7 @@ import android.widget.ListView;
 
 public class FragmentCommonPost extends Fragment{
 	
-	private CommonNumbersAdapter numbersAdapter;
+	private postProvinceAdapter numbersAdapter;
 	private List<Map<String, Object>> mList = null;
 	private ListView listViewCommon;
 	
@@ -40,7 +40,7 @@ public class FragmentCommonPost extends Fragment{
 		DatabaseDAO dao = new DatabaseDAO(getActivity());
 		mList = dao.queryPostProvince();
 		listViewCommon = (ListView) getActivity().findViewById(R.id.listview_commonpost);
-		numbersAdapter = new CommonNumbersAdapter(getActivity(), mList, R.id.listview_commonpost, new String[]{"name"}, new int[]{R.id.district_name});
+		numbersAdapter = new postProvinceAdapter(getActivity(), mList, R.id.listview_commonpost, new String[]{"name"}, new int[]{R.id.district_name});
 		listViewCommon.setAdapter(numbersAdapter);
 		listViewCommon.setOnItemClickListener(new OnItemClickListener() {
 

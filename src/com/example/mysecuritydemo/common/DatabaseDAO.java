@@ -44,6 +44,7 @@ public class DatabaseDAO {
 		if (cursor.moveToNext()) {
 			result = cursor.getString(0);
 		}
+		sqliteDatabase.close();
 		return result;
 	}
 
@@ -132,7 +133,7 @@ public class DatabaseDAO {
 		for(cursor.moveToFirst(); ! cursor.isAfterLast(); cursor.moveToNext()){
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("code", cursor.getString(cursor.getColumnIndex("post_code")));
-			System.out.println("code"+cursor.getString(cursor.getColumnIndex("post_code")));
+		//	System.out.println("code"+cursor.getString(cursor.getColumnIndex("post_code")));
 			map.put("name", cursor.getString(cursor.getColumnIndex("city_name")));	
 			mlist.add(map);
 		}
@@ -140,20 +141,41 @@ public class DatabaseDAO {
 		return mlist;
 	}
 	
-	public List<Map<String, Object>> queryPlate(int province_id) {
+	public List<Map<String, Object>> queryPlateNumber(int province_id) {
 		List<Map<String, Object>> mlist = new ArrayList<Map<String,Object>>();
 		// 创建DatabaseHelper对象
 		DatabaseHelper dbHelper = new DatabaseHelper(context,
 				"number_location.db", 2);
 		// 得到一个只读的SQLiteDatabase对象
 		sqliteDatabase= dbHelper.getReadableDatabase();
-		Cursor cursor = sqliteDatabase.rawQuery("select * from post_city where province_id  = (" + province_id + ") ", null);
+		Cursor cursor = sqliteDatabase.rawQuery("select * from plate_number where province_id  = (" + province_id + ") ", null);
 		// 将光标移动到下一行，从而判断该结果集是否还有下一条数据，如果有则返回true，没有则返回false
 		for(cursor.moveToFirst(); ! cursor.isAfterLast(); cursor.moveToNext()){
 			Map<String, Object> map = new HashMap<String, Object>();
-			map.put("code", cursor.getString(cursor.getColumnIndex("post_code")));
-			System.out.println("code"+cursor.getString(cursor.getColumnIndex("post_code")));
+			map.put("plate", cursor.getString(cursor.getColumnIndex("plate_number")));
+			//System.out.println("code"+cursor.getString(cursor.getColumnIndex("post_code")));
 			map.put("name", cursor.getString(cursor.getColumnIndex("city_name")));	
+			mlist.add(map);
+		}
+		sqliteDatabase.close();
+		return mlist;
+	}
+	
+	public List<Map<String, Object>> queryAllCommonNumber(int typeId) {
+		List<Map<String, Object>> mlist = new ArrayList<Map<String,Object>>();
+		// 创建DatabaseHelper对象
+		DatabaseHelper dbHelper = new DatabaseHelper(context,
+				"number_location.db", 2);
+		// 得到一个只读的SQLiteDatabase对象
+		sqliteDatabase= dbHelper.getReadableDatabase();
+		Cursor cursor = sqliteDatabase.rawQuery("select * from common_number where type_id  = (" + typeId + ")", null);
+		// 将光标移动到下一行，从而判断该结果集是否还有下一条数据，如果有则返回true，没有则返回false
+		for(cursor.moveToFirst(); ! cursor.isAfterLast(); cursor.moveToNext()){
+			Map<String, Object> map = new HashMap<String, Object>();
+			//map.put("id", cursor.getString(cursor.getColumnIndex("type_id")));
+			map.put("title", cursor.getString(cursor.getColumnIndex("title")));
+		//	System.out.println("title"+cursor.getString(cursor.getColumnIndex("title")));
+			map.put("number", cursor.getString(cursor.getColumnIndex("number")));	
 			mlist.add(map);
 		}
 		sqliteDatabase.close();
