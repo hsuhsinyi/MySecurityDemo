@@ -15,7 +15,7 @@
             android:id="@+id/layout_viewpagerhead"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#ffffff" >
+            android:background="#E7E7E7" >
 
             <TextView
                 android:id="@+id/common_number"

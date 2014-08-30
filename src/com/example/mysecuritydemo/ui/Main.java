@@ -40,16 +40,16 @@ public class Main extends Activity {
 	}
 
 	private void initMainUi() {
-		mainGridView = (GridView) findViewById(R.id.main_gridview);
+		//mainGridView = (GridView) findViewById(R.id.main_gridview);
 		// titleList = new ArrayList<Map<String,Object>>();
-		MainItemManager itemManager = new MainItemManager(this);
-		titleList = itemManager.getMainList();
-		mainAdapter = new MainUiAdapter(this, titleList,
-				R.layout.gridview_allcontent,
-				new String[] { "image", "title" }, new int[] {
-						R.id.image_content, R.id.text_content });
-		mainGridView.setAdapter(mainAdapter);
-		mainGridView.setOnItemClickListener(itemClickListener);
+	//	MainItemManager itemManager = new MainItemManager(this);
+	//	titleList = itemManager.getMainList();
+	//	mainAdapter = new MainUiAdapter(this, titleList,
+	//			R.layout.gridview_allcontent,
+	//			new String[] { "image", "title" }, new int[] {
+	//					R.id.image_content, R.id.text_content });
+	//	mainGridView.setAdapter(mainAdapter);
+	//	mainGridView.setOnItemClickListener(itemClickListener);
 	}
 
 	OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {

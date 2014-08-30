@@ -23,7 +23,7 @@
     <RadioGroup
         android:id="@+id/main_radio"
         android:layout_width="fill_parent"
-        android:layout_height="50dip"
+        android:layout_height="40dip"
         android:layout_gravity="bottom"
         android:background="#ffffff"
         android:gravity="center_vertical"
@@ -33,23 +33,23 @@
             android:id="@+id/query_radiobtn"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:layout_marginBottom="1dip"
+            android:layout_marginTop="1dip"
             android:layout_weight="1.0"
             android:button="@null"
             android:drawableTop="@drawable/serach_query"
-            android:gravity="center_horizontal"
-            android:paddingBottom="1.0dip"
-            android:paddingTop="1.0dip" />
+            android:gravity="center_horizontal" />
 
         <RadioButton
             android:id="@+id/common_radiobtn"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:layout_marginBottom="1dip"
+            android:layout_marginTop="1dip"
             android:layout_weight="1.0"
             android:button="@null"
             android:drawableTop="@drawable/common_query"
-            android:gravity="center_horizontal"
-            android:paddingBottom="1.0dip"
-            android:paddingTop="1.0dip" />
+            android:gravity="center_horizontal" />
     </RadioGroup>
 
 </LinearLayout>
